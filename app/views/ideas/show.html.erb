@@ -1,0 +1,20 @@
+<p>
+  <%= image_tag(@idea.picture_url, :width => 600) if @idea.picture.present? %>
+</p>
+<p>
+  <%= @idea.description %>
+</p>
+<p>
+<% if @idea.done == true %>
+<% else %>	
+	<% if @idea.priority == "1" %>
+	Fucking do it!
+	<% elsif @idea.priority == "2" %>
+	Fucking do it right now!
+	<% elsif @idea.priority == "3" %>
+	If you don't fucking do it right now - you're fucked!
+	<% end %>
+	</p>
+	<%= link_to 'I fucking did it', idea_url(@idea, :idea => {:done => true}), :method => :put %>
+<% end %>
+<%= link_to 'Back', ideas_path %>

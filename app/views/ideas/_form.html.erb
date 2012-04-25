@@ -1,0 +1,36 @@
+<%= form_for(@idea, :html => {:multipart => true}) do |f| %>
+  <% if @idea.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@idea.errors.count, "error") %> prohibited this idea from being saved:</h2>
+
+      <ul>
+      <% @idea.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :picture %><br />
+    <%= f.file_field :picture %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.radio_button :priority, 1 %>
+    <%= f.label :priority, "Fucking do it!", :value => 1 %><br />
+    <%= f.radio_button :priority, 2 %>
+    <%= f.label :priority, "Fucking do it right now!", :value => 2 %><br />
+    <%= f.radio_button :priority, 3 %>
+    <%= f.label :priority, "If you don't fucking do it right now – you're fucked!", :value => 3 %><br />
+  </div>
+  <div class="field">
+  <%= f.label :email %><br />
+  <%= f.text_field :email %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
