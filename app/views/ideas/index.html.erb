@@ -1,13 +1,15 @@
-<% @ideas.each do |idea| %>
-  <div class="image <% if idea.done == true %>done<% end %>">
-    <%= link_to image_tag(idea.picture, :width=>"100"), idea %>
-    <% if idea.done == true %> 
-      <div class="image_done_overlay">
-        <%= link_to image_tag("rails.png", :width=>"100"), idea %>
-      </div>
-    <% end %>
-  </div>
-<% end %>
-
-
-<%= link_to 'New Idea', new_idea_path %>
+<%= link_to image_tag("logo_small.png", :class => "logo_small"), "pages/start" %>
+<%= link_to image_tag("getthefuckdone_unterseite.png", :class => "fucklinkunterseite"), new_idea_url %>
+<div class="background">
+	<% @ideas.each do |idea| %>
+	  <div class="image <% if idea.done == true %>done<% end %>">
+	    <%= link_to image_tag(idea.picture, :width=>"225"), idea %>
+	    <% if idea.done == true %> 
+	      <div class="image_done_overlay">
+	        <%= link_to image_tag("overlay.png", :width=>"225"), idea %>
+	      </div>
+	    <% end %>
+	  </div>
+	<% end %>
+	<div class="clear"></div>
+</div>

@@ -2,7 +2,7 @@ class IdeasController < ApplicationController
   # GET /ideas
   # GET /ideas.json
   def index
-    @ideas = Idea.all
+    @ideas = Idea.order("id DESC")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -44,7 +44,7 @@ class IdeasController < ApplicationController
 
     respond_to do |format|
       if @idea.save
-        format.html { redirect_to "/ideas", notice: 'Big Success!' }
+        format.html { redirect_to "/ideas" }
         format.json { render json: @idea, status: :created, location: @idea }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class IdeasController < ApplicationController
 
     respond_to do |format|
       if @idea.update_attributes(params[:idea])
-        format.html { redirect_to @idea, notice: 'I fucking did it!' }
+        format.html { redirect_to @idea }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

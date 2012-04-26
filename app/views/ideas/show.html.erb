@@ -1,20 +1,21 @@
+<%= link_to image_tag("logo_small.png", :class => "logo_small"), "/pages/start" %>
+<div class="background">
 <p>
   <%= image_tag(@idea.picture_url, :width => 600) if @idea.picture.present? %>
 </p>
-<p>
+<p class="mess_description">
   <%= @idea.description %>
 </p>
-<p>
+
+
 <% if @idea.done == true %>
+	<%= image_tag("youfuckingdidit.png", :class => "you_fucking_did_it") %>
 <% else %>	
-	<% if @idea.priority == "1" %>
-	Fucking do it!
-	<% elsif @idea.priority == "2" %>
-	Fucking do it right now!
-	<% elsif @idea.priority == "3" %>
-	If you don't fucking do it right now - you're fucked!
-	<% end %>
+	<p>
+	<%= @idea.fuck_message %>
 	</p>
-	<%= link_to 'I fucking did it', idea_url(@idea, :idea => {:done => true}), :method => :put %>
+	<%= link_to image_tag("ifuckingdidit.png", :class => "you_fucking_did_it"), idea_url(@idea, :idea => {:done => true}), :method => :put %>
+
 <% end %>
-<%= link_to 'Back', ideas_path %>
+
+</div>

@@ -11,26 +11,29 @@
     </div>
   <% end %>
   <div class="field">
-    <%= f.label :picture %><br />
-    <%= f.file_field :picture %>
+    <%= f.label "Show us the fucking mess!", :class=>"form_label"%>
+    <%= f.file_field :picture, :class=> 'large' %>
   </div>
   <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
+    <%= f.label "Describe the fucking mess!", :class=>"form_label"%>
+    <%= f.text_area :description, :class=>"description"%>
+  </div>
+  <div class="field stereo">
+
+    <% (1..Idea.fucking_messages.count).each do |prio| %>
+      <%= f.radio_button :priority, prio %>
+      <%= f.label :priority, Idea.fucking_messages["#{prio}"], :value => prio %><br />
+    <% end -%>
+    
   </div>
   <div class="field">
-    <%= f.radio_button :priority, 1 %>
-    <%= f.label :priority, "Fucking do it!", :value => 1 %><br />
-    <%= f.radio_button :priority, 2 %>
-    <%= f.label :priority, "Fucking do it right now!", :value => 2 %><br />
-    <%= f.radio_button :priority, 3 %>
-    <%= f.label :priority, "If you don't fucking do it right now – you're fucked!", :value => 3 %><br />
+  <%= f.label "E-Mail of the fucker who has to clean it:", :class=>"form_label"%>
+  <%= f.text_field :email, :class=>"fucker_mail"%>
   </div>
-  <div class="field">
-  <%= f.label :email %><br />
-  <%= f.text_field :email %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div>
+    <%= f.submit "Fuck it", :class=>"btn btn-inverse" %>
   </div>
 <% end %>
+
+
+

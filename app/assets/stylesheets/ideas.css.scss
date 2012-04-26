@@ -1,3 +1,43 @@
 // Place all the styles related to the ideas controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.background {
+	background-color: white;
+	padding: 40px;
+	padding-left: 60px;
+	box-shadow: 0 0 10px #bbbbbb;
+	margin-top: -30px;
+	position: relative;
+}
+.logo_small {
+	margin-left: -60px;
+	margin-top: -30px;
+	width: 300px;
+	position: relative;
+	z-index: 2
+}
+.fucklinkunterseite {
+	position: fixed;
+	top: 265px;
+	right:0px;
+}
+
+.mess_description {
+	font-size: 18px;
+  	font-weight: bold;
+  	margin-bottom: 10px;
+}
+
+.flash_message {
+	color: #FF0000;
+    font-size: 18pt;
+    margin-left: 368px;
+    width: 400px;
+}
+
+.you_fucking_did_it {
+	position: absolute;
+	top: -80px;
+	left: 550px;
+}
