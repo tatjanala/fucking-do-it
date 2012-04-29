@@ -5,7 +5,6 @@ gem 'rails', '3.2.2'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
 gem 'carrierwave'
 gem "fog", "~> 1.3.1"
 
@@ -21,8 +20,13 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :development do
+  gem 'sqlite3'
+  gem "heroku"
+end
+
 group :production do
-	gem 'pg'
+  gem 'pg'
 end
 
 gem 'jquery-rails'
