@@ -1,7 +1,7 @@
 class Idea < ActiveRecord::Base
   mount_uploader :picture, PictureUploader
 
-  after_create :deliver_email
+  after_save :deliver_email, on: :create
 
   def self.fucking_messages
     {
