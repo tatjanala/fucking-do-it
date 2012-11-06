@@ -1,4 +1,5 @@
-if Rails.env.production? 
+fog_environments = %w(production development)
+if fog_environments.include? Rails.env
   CarrierWave.configure do |config|
     config.fog_credentials = {
       :provider =>'AWS',

@@ -4,10 +4,10 @@ class PictureUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
-  # include CarrierWave::MiniMagick
+  include CarrierWave::MiniMagick
 
   # Include the Sprockets helpers for Rails 3.1+ asset pipeline compatibility:
-  # include Sprockets::Helpers::RailsHelper
+  # include Sprockets::Helpers::RailsHelpers
   # include Sprockets::Helpers::IsolatedHelper
 
   # Choose what kind of storage to use for this uploader:
@@ -36,9 +36,14 @@ class PictureUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
-  # version :thumb do
-  #   process :scale => [50, 50]
-  # end
+  # https://github.com/jnicklas/carrierwave
+  # http://carrierwave.rubyforge.org/rdoc/classes/CarrierWave/MiniMagick.html
+  version :thumb do
+    process :resize_to_limit => [100, 100]
+  end
+  version :mini do
+    process :resize_to_limit => [350, 350]
+  end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:

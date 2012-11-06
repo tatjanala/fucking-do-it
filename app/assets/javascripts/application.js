@@ -13,3 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(document).ready(function(){
+	$('.button_to').submit(function() {
+		var url = $(".button_to").attr('action');
+		$.ajax(url);
+	});
+})

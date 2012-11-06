@@ -1,2 +1,1 @@
-<img src="http://localhost:3000<%= @idea.picture_url %>" />
-Go to <%= idea_url(@idea, :host => "localhost:3000") %> and fucking do it!!!
+Go to <%= link_to image_tag(@idea.picture.mini.url), idea_url(@idea) %> and fucking do it!!!

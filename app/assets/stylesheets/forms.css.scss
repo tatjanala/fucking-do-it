@@ -6,12 +6,14 @@
 
 input.large {
 	height: 20px;
-} 
+}
 
 textarea.description {
 	height: 60px;
 	width: 285px;
-} 
+	margin-bottom: 30px;
+	color: red;
+}
 
 .field.stereo input {
 	float: left;
@@ -21,4 +23,7 @@ textarea.description {
 input.fucker_mail {
 	height: 20px;
 	width: 285px;
-} 
+}
+input.fucker_mail:focus {
+	border-color:red;
+}
