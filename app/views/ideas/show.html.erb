@@ -6,18 +6,14 @@
 <p class="mess_description">
   <%= @idea.description %>
 </p>
-
-
 <% if @idea.done == true %>
 	<%= image_tag("youfuckingdidit.png", :class => "you_fucking_did_it") %>
-	<%= audio_tag("fucking_dit_it.mp3", :autoplay => true, :controls => false) %>
+	<%= audio_tag("fucking_dit_it.mp3", :autoplay => true, :controls => false, :id => "player") %>
 <% else %>
 	<p>
 	<%= @idea.fuck_message %>
 	</p>
-	<%#= button_to "fucking do it", idea_url(@idea, :idea => {:done => true}) , :method => :put, :id => "you_fucking_did_it" %>
 	<%= link_to image_tag("ifuckingdidit.png", :class => "you_fucking_did_it"), idea_url(@idea, :idea => {:done => true}), :method => :put, :id => "you_fucking_did_it" %>
-
 <% end %>
 
 </div>
