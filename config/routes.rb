@@ -1,4 +1,8 @@
 Railsgirls::Application.routes.draw do
+  resources :cleaning_services do
+    get :notify, on: :collection
+  end
+
   get "pages/start"
 
   root :to => redirect("/pages/start")

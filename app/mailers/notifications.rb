@@ -7,4 +7,7 @@ class Notifications < ActionMailer::Base
     mail to: @idea.email, subject: @idea.fuck_message
   end
 
+  def notify_cleaning_guy(email)
+  	mail to: email, subject: "clean the fucking office today"
+  end
 end
